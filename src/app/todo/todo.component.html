@@ -1,0 +1,28 @@
+<div class="todo">
+
+  Todo component
+  <form class="form-inline" #f="ngForm" (ngSubmit)="addTodo()">
+    <div class="form-group row">
+      <input class="form-control" name="newTodo" [(ngModel)]="newValue">
+    </div>
+    <button class="btn btn-primary" rs>Submit</button>
+  </form>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Created at</th>
+        <th>Value</th>
+        <th>Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos">
+        <td scope="row">{{todo.id}}</td>
+        <td>{{todo.created_at | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+        <td>{{todo.value}}</td>
+        <td>{{todo.completed}}</td>
+      </tr>
+    </tbody>
+  </table>
