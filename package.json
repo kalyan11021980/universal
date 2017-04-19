@@ -65,6 +65,7 @@
     "mongoose": "^4.9.4",
     "morgan": "^1.7.0",
     "preboot": "~4.5.2",
+    "request": "^2.81.0",
     "rxjs": "5.0.0-beta.12",
     "webfontloader": "^1.6.26",
     "zone.js": "~0.6.26"

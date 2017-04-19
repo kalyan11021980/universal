@@ -12,6 +12,7 @@ import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as morgan from 'morgan';
 import * as compression from 'compression';
+var request = require('request');
 
 // Angular 2
 import { enableProdMode } from '@angular/core';
@@ -73,6 +74,15 @@ import { serverApi, createTodoApi } from './backend/api';
 app.get('/data.json', serverApi);
 
 // Flight api path
+
+app.get('/api', function(req, res) {
+      request.get({ url: "https://jsonplaceholder.typicode.com/posts", json: true}, function(error, response, body) {
+              if (!error && response.statusCode == 200) {
+                  res.json(body);
+                 }
+             });
+     });
+
 
 
 app.use('/api', createTodoApi());

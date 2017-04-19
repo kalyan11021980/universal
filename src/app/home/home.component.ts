@@ -13,7 +13,7 @@ import * as $ from 'jquery';
 })
 export class HomeComponent {
   title = 'Shopping Lite Home';
-  data: any = {};
+  data: any[] = [];
   constructor(public model: ModelService) {
 
     // we need the data synchronously for the client to set the server response
@@ -22,7 +22,7 @@ export class HomeComponent {
   }
 
   universalInit() {
-    this.model.get('/data.json').subscribe(data => {
+    this.model.get('/api').subscribe(data => {
       this.data = data;
     });
 
@@ -31,7 +31,7 @@ export class HomeComponent {
   ngOnInit() {
     // Run Jquery code if needed only inside if browser
     if (isBrowser) {
-      
+
     }
   }
 

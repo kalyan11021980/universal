@@ -5,9 +5,21 @@
     <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
 </div>
 
+<div *ngFor="let item of data" class="card">
+  <div class="card-header">
+    {{ item.title }}
+  </div>
+  <div class="card-block">
+    <blockquote class="card-blockquote">
+      <p>{{ item.body }}</p>
+    </blockquote>
+  </div>
+</div>
+
+<!--
 <div class="home">
   Home component
   <strong>Async data call return value:</strong>
   <pre>{{ data | json }}</pre>
   <blockquote>{{ data.data }}</blockquote>
-</div>
+</div> -->
