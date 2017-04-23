@@ -14,7 +14,7 @@
     "prebuild": "npm run clean:dist",
     "build": "webpack  --progress",
     "compile:scss": "node scss-config.js",
-    "clean:css": "rimraf **/*.css",
+    "clean:css": "rimraf src/app/**/*.css",
     "build:prod:ngc": "npm run clean:ngc && npm run clean:css && npm run compile:scss && npm run ngc && npm run clean:dist && npm run build:prod",
     "build:prod:ngc:json": "npm run clean:ngc && npm run clean:css &&npm run ngc && npm run clean:dist && npm run compile:scss && npm run build:prod:json",
     "build:prod": "webpack --config webpack.prod.config.ts",
